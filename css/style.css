@@ -17,6 +17,7 @@
     text-decoration:none;
     outline: none; border:none;
     transition: all .2s linear;
+    list-style: none;
 }
 
 
@@ -253,7 +254,83 @@ footer a{
     margin-bottom: 10px;
     padding-top: 10px;
 }
+/*menu css*/
+.container-menu{
+    width: 85%;
+    margin: 50px auto;
+    text-align: center;
+}
+.list{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.list li{
+    margin: 0px 15px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+.list li::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 0%;
+    background: var(--red);
+    height: 2px;
+    left: 50%;
+    transition: .3s ease-in-out;
+}
+.list li:hover::after{
+    width: 100%;
+    left: 0;
+}
+.list li.active{
+    color: var(--red);
+    transition: .3s ease-in-out;
+}
 
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+}
+.box{
+    width: 32%;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    animation: displayable 1s ease-in-out;
+}
+.box .text{
+    width: 60%;
+    text-align: left;
+}
+.text h3{
+    font-size: 22px;
+}
+.text hr{
+    height: 2px;
+    background: var(--red);
+    width: 50px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.text section{
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.text i{
+    color: var(--light-color);
+}
 
 
 
