@@ -30,6 +30,17 @@ window.onscroll = () =>{
     });
   
 }
+const tabs = document.querySelectorAll('.tab');
+const theTabContent = document.querySelectorAll('.tabContent');
+
+tabs.forEach((tab, index) =>
+ tab.addEventListener('click', ()=>{
+  tabs.forEach(tab=>{tab.classList.remove('active')});
+tab.classList.add('active');
+
+theTabContent.forEach(info=>{info.classList.remove('active')})
+theTabContent[index].classList.add('active');
+ }))
 
 var swiper = new Swiper(".home-slider", {
     spaceBetween: 30,
