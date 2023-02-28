@@ -21,7 +21,7 @@
 
     <!-- header section starts-->
     <header>
-        <div class="logo"><a href=""><img class="siam-orchid-logo" src="images/siam-orchid-logo.png"></a></div>
+        <div class="logo"><a href=""><img class="siam-orchid-logo" src="images/siam-orchid-logo.png" alt="Siam Orchind Logo"></a></div>
         <nav class="navbar">
             <a  class="active" href="#home">HOME</a>
             <a href="#about">ABOUT</a>
@@ -82,7 +82,7 @@
                             <a href="#" class="btn">order now</a>
                         </div>
                         <div class="image">
-                            <img src="images/thai-dish.png" alt="">
+                            <img src="images/thai-dish.png" alt="A Picture Of A Thai Food Dish">
                         </div>
                     </div>
         
@@ -94,7 +94,7 @@
                             <a href="#" class="btn">order now</a>
                         </div>
                         <div class="image">
-                            <img src="images/japanese-dish.png" alt="">
+                            <img src="images/japanese-dish.png" alt="A Picture Of a Fish Type Japanese Style Dish">
                         </div>
                     </div>
 
@@ -105,7 +105,7 @@
                             <p><br>There are also rooms available for private parties, business functions or large party dining and catering. To reserve a private room or a table, please call us at (321) 783-4545.</p>
                         </div>
                         <div class="image">
-                            <img src="images/cocktail.png" alt="">
+                            <img src="images/cocktail.png" alt="An Image of a Multi Colored Cocktail in a glass">
                         </div>
                     </div>
                 </div>
@@ -118,28 +118,41 @@
     </section>
     <!--Slider ends here-->
 
-
+    
     <!-- Menu section starts-->
-   <section class="menu" id="menu">
-			<div class="container-menu">
-				<div class="title">
-					<h1 class="heading">MENU</h1>
-				</div>
-			<div class="menu-info">
-				<h3>The Favorites</h3>
-                <P class="par">These are the most Popular food items in our Restaurant .</P>
-            <div class="container">
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/Pad-thai.jpg" alt="">
-                        </div>
-                        <h4>Beef Pad Thai</h4>
+    <section class="menu" id="menu">
+        <div class="title">
+            <h1 class="heading">MENU</h1>
+        </div>
+        <div class="container-menu">
+                <div class = "tab-box">
+
+                    <button class = "tab active">Favorites</button>
+                    <button class = "tab">Appetizers</button>
+                    <button class = "tab">Soups and Salads</button>
+                    <button class = "tab">Entrees</button>
+                    <button class = "tab">Sushi and Rolls</button>
+                    <button class = "tab">Drinks</button>
+                    <button class = "tab">Desserts</button>
+                    <button class = "tab">Kids Menu</button>
+                </div>
+                <div class="menu-info">
+                
+                    
+                    <div class = "tabContent active">
+                    <div class="container">
+
+                            <div class="box">
+                                <div class="menu-image">
+                                    <img src="images/Pad-thai.jpg" alt="Pad Thai Food on a Dish with a Wood like Background">
+                                </div>
+                                <h4>Beef Pad Thai</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
                         <span>$18</span>
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/Toyota-roll.jpg" alt="">
+                            <img src="images/Toyota-roll.jpg" alt="A Toyota Roll Dish on a Black Background">
                         </div>
                         <h4>Toyota Roll</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -147,7 +160,7 @@
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/chicken-curry.jpg" alt="">
+                            <img src="images/chicken-curry.jpg" alt="A Chicken Curry Dish">
                         </div>
                         <h4>Chicken Curry</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -155,7 +168,7 @@
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/sashimi-dinner.jpg" alt="">
+                            <img src="images/sashimi-dinner.jpg" alt="Two Sashimi Dishes on A Black Background">
                         </div>
                         <h4>Sashimi Dinner</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -163,7 +176,7 @@
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/GGarlic-jumboshrimp.jpg" alt="">
+                            <img src="images/GGarlic-jumboshrimp.jpg" alt="A Garlic Jumbo Shrimp Dish">
                         </div>
                         <h4>Garlic Jumbo Shriimp</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -171,7 +184,7 @@
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/salmon.jpg" alt="">
+                            <img src="images/salmon.jpg" alt="A Cooked Salmon Dish ">
                         </div>
                         <h4>Grilled Salmon</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -179,7 +192,7 @@
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/seafood-salad.jpg" alt="">
+                            <img src="images/seafood-salad.jpg" alt="A Seafood Salad Dish on a White Backdrop">
                         </div>
                         <h4>Seafood Salad</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -187,7 +200,7 @@
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/chicken-stirfry.jpg" alt="">
+                            <img src="images/chicken-stirfry.jpg" alt="Some Chicken Stirfry in a Black Bowl">
                         </div>
                         <h4>Chicken Stir-Fry</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -195,7 +208,7 @@
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/basil-duck.jpg" alt="">
+                            <img src="images/basil-duck.jpg" alt="A Basil Duck Dish">
                         </div>
                         <h4>Basil Duck</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -203,7 +216,7 @@
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/dragon-roll.jpg" alt="">
+                            <img src="images/dragon-roll.jpg" alt="Some Dragon Rolls on a White Plate">
                         </div>
                         <h4>Dragon Roll</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -211,7 +224,7 @@
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/crispy-squid.jpg" alt="">
+                            <img src="images/crispy-squid.jpg" alt="Crispy Squid Rings on a Black Backdrop">
                         </div>
                         <h4>Crispy Squid</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -219,24 +232,32 @@
                     </div>
                     <div class="box">
                         <div class="menu-image">
-                            <img src="images/Spring-rolls.jpg" alt="">
+                            <img src="images/Spring-rolls.jpg" alt="Six Spring Rolls on a White Plate with some Sauce in the Background">
                         </div>
                         <h4>Thai Spring Rolls</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
                         <span>$6</span>
                     </div>
+                </div>
                     <div class="menu-button">
                         <a href="#" class="btn">View Full Menu</a>
                     </div>
+                    
                 </div>
-
-			</div>
+                
+                <div class = "tabContent">
+                    <div class="container">
+                            <!--INSERT DATABASE MENU ITEMS-->
+                    
+                </div>
+            </div>
+            
 		</section>
     <!-- Menu section ends-->
 
 
     <!--Footer/ info section starts here-->
-        <!--google map-->
+    <!--google map-->
     <section class="inoformation" id="information">
         <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=1275%20N%20Atlantic%20Ave,%20Cocoa%20Beach,%20FL%2032931+(Siam%20Orchid)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">area maps</a></iframe></div>
 

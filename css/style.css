@@ -254,6 +254,13 @@ footer a{
     padding-top: 10px;
 }
 /*menu css*/
+.container-menu{
+    width:auto;
+    background-color: #ffeedd;
+    box-shadow:0 .5rem 1.5rem rgba(0,0,0,.3);
+    padding:10px;
+    border-radius: .5rem;
+}   
 .menu .par{
     text-align: center;
     padding-bottom: 10px;
@@ -266,6 +273,7 @@ footer a{
     justify-content: center;
     padding-bottom: 30px;
 }
+
 .menu-info h3{
     font-size: 40px;
     color: var(--red);
@@ -273,11 +281,20 @@ footer a{
     text-align: center;
 }
 .menu .container .box{
+    
     background: var(--white);
     border: .1rem solid rgba(0,0,0,.3);
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
 }
+.menu .tabContent {
+    display: none;
+}
+.menu .tabContent.active {
+    display: block;
+}
+
+
 .menu .image{
     height: 25rem;
     width: 100%;
@@ -307,6 +324,28 @@ footer a{
 }
 .menu-button{
     align-items: center;
+}
+.container-menu .tab-box{
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+   padding: 7px;
+    font-size: 18px;
+}
+.tab-box .tab{
+  font-size: 18px;
+  font-weight: 600;
+  color: #690000;
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor:pointer;
+   
+}
+.tab-box .tab.active{
+    
+    border-bottom: 2px solid darkred;
 }
 
 
