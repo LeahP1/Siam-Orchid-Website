@@ -127,7 +127,8 @@
         <div class="container-menu">
                 <div class = "tab-box">
 
-                    <button class = "tab active">Favorites</button>
+                    <button class = "tab active">Thai Specials</button>
+                    <button class = "tab">Japanese Specials</button>
                     <button class = "tab">Appetizers</button>
                     <button class = "tab">Soups and Salads</button>
                     <button class = "tab">Entrees</button>
@@ -137,121 +138,251 @@
                     <button class = "tab">Kids Menu</button>
                 </div>
                 <div class="menu-info">
-                
-                    
-                    <div class = "tabContent active">
-                    <div class="container">
+                <?php
 
-                            <div class="box">
-                                <div class="menu-image">
-                                    <img src="images/Pad-thai.jpg" alt="Pad Thai Food on a Dish with a Wood like Background">
-                                </div>
-                                <h4>Beef Pad Thai</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$18</span>
-                    </div>
+
+
+// Create connection
+$conn = new mysqli('localhost', 'root', '', 'menutest');
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+?><div class = "tabContent active"><?php
+$sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Thai Lunch Specials'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+        ?><div class="container">
+                <div class="box">
+                    <h4><?php echo $row["COL 2"] ?></h4>
+            <p><?php echo $row["COL 4"] ?> </p>
+            <span><?php echo $row["COL 3"] ?></span>
+        </div>
+        </div>
+        
+        <?php } 
+    ?></div>
+
+
+
+    <?php
+} else {
+    echo "0 results";
+    }
+    ?><div class = "tabContent"><?php
+$sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Japanese Lunch Specials'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+        ?><div class="container">
+                <div class="box">
+                    <h4><?php echo $row["COL 2"] ?></h4>
+            <p><?php echo $row["COL 4"] ?> </p>
+            <span><?php echo $row["COL 3"] ?></span>
+        </div>
+        </div>
+        
+        <?php } 
+    ?></div>
+
+
+
+    <?php
+} else {
+    echo "0 results";
+    }
+    ?><div class = "tabContent"><?php
+    $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Appetizers'";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+    
+            ?><div class="container">
                     <div class="box">
-                        <div class="menu-image">
-                            <img src="images/Toyota-roll.jpg" alt="A Toyota Roll Dish on a Black Background">
-                        </div>
-                        <h4>Toyota Roll</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$19</span>
-                    </div>
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/chicken-curry.jpg" alt="A Chicken Curry Dish">
-                        </div>
-                        <h4>Chicken Curry</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$16</span>
-                    </div>
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/sashimi-dinner.jpg" alt="Two Sashimi Dishes on A Black Background">
-                        </div>
-                        <h4>Sashimi Dinner</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$25</span>
-                    </div>
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/GGarlic-jumboshrimp.jpg" alt="A Garlic Jumbo Shrimp Dish">
-                        </div>
-                        <h4>Garlic Jumbo Shriimp</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$23</span>
-                    </div>
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/salmon.jpg" alt="A Cooked Salmon Dish ">
-                        </div>
-                        <h4>Grilled Salmon</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$18</span>
-                    </div>
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/seafood-salad.jpg" alt="A Seafood Salad Dish on a White Backdrop">
-                        </div>
-                        <h4>Seafood Salad</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$13</span>
-                    </div>
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/chicken-stirfry.jpg" alt="Some Chicken Stirfry in a Black Bowl">
-                        </div>
-                        <h4>Chicken Stir-Fry</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$16</span>
-                    </div>
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/basil-duck.jpg" alt="A Basil Duck Dish">
-                        </div>
-                        <h4>Basil Duck</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$23</span>
-                    </div>
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/dragon-roll.jpg" alt="Some Dragon Rolls on a White Plate">
-                        </div>
-                        <h4>Dragon Roll</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$13</span>
-                    </div>
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/crispy-squid.jpg" alt="Crispy Squid Rings on a Black Backdrop">
-                        </div>
-                        <h4>Crispy Squid</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$8</span>
-                    </div>
-                    <div class="box">
-                        <div class="menu-image">
-                            <img src="images/Spring-rolls.jpg" alt="Six Spring Rolls on a White Plate with some Sauce in the Background">
-                        </div>
-                        <h4>Thai Spring Rolls</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span>$6</span>
-                    </div>
-                </div>
-                    <div class="menu-button">
-                        <a href="#" class="btn">View Full Menu</a>
-                    </div>
-                    
-                </div>
-                
-                <div class = "tabContent">
-                    <div class="container">
-                            <!--INSERT DATABASE MENU ITEMS-->
-                    
-                </div>
+                        <h4><?php echo $row["COL 2"] ?></h4>
+                <p><?php echo $row["COL 4"] ?> </p>
+                <span><?php echo $row["COL 3"] ?></span>
+            </div>
             </div>
             
+            <?php } 
+        ?></div>
+    
+    
+    
+        <?php
+    } else {
+        echo "0 results";
+        }
+       
+         ?><div class = "tabContent"><?php
+    $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Soups' OR `COL 5` = 'Salads' ";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+    
+            ?><div class="container">
+                    <div class="box">
+                        <h4><?php echo $row["COL 2"] ?></h4>
+                <p><?php echo $row["COL 4"] ?> </p>
+                <span><?php echo $row["COL 3"] ?></span>
+            </div>
+            </div>
+            
+            <?php } 
+        ?></div>
+    
+    
+    
+        <?php
+    } else {
+        echo "0 results";
+        }
+        ?><div class = "tabContent"><?php
+    $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` LIKE '%Entrees'";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+    
+            ?><div class="container">
+                    <div class="box">
+                        <h4><?php echo $row["COL 2"] ?></h4>
+                <p><?php echo $row["COL 4"] ?> </p>
+                <span><?php echo $row["COL 3"] ?></span>
+            </div>
+            </div>
+            
+            <?php } 
+        ?></div>
+    
+    
+    
+        <?php
+    } else {
+        echo "0 results";
+        }
+        ?><div class = "tabContent"><?php
+        $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` LIKE '%Rolls'";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+        
+                ?><div class="container">
+                        <div class="box">
+                            <h4><?php echo $row["COL 2"] ?></h4>
+                    <p><?php echo $row["COL 4"] ?> </p>
+                    <span><?php echo $row["COL 3"] ?></span>
+                </div>
+                </div>
+                
+                <?php } 
+            ?></div>
+        
+        
+        
+            <?php
+        } else {
+            echo "0 results";
+            }
+            ?><div class = "tabContent"><?php
+            $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Beverages'";
+            $result = $conn->query($sql);
+            
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+            
+                    ?><div class="container">
+                            <div class="box">
+                                <h4><?php echo $row["COL 2"] ?></h4>
+                        <p><?php echo $row["COL 4"] ?> </p>
+                        <span><?php echo $row["COL 3"] ?></span>
+                    </div>
+                    </div>
+                    
+                    <?php } 
+                ?></div>
+            
+            
+            
+                <?php
+            } else {
+                echo "0 results";
+                }
+                ?><div class = "tabContent"><?php
+                $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Desserts'";
+                $result = $conn->query($sql);
+                
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                
+                        ?><div class="container">
+                                <div class="box">
+                                    <h4><?php echo $row["COL 2"] ?></h4>
+                            <p><?php echo $row["COL 4"] ?> </p>
+                            <span><?php echo $row["COL 3"] ?></span>
+                        </div>
+                        </div>
+                        
+                        <?php } 
+                    ?></div>
+                
+                
+                
+                    <?php
+                } else {
+                    echo "0 results";
+                    }
+                    ?><div class = "tabContent"><?php
+                    $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` LIKE '%Menu'";
+                    $result = $conn->query($sql);
+                    
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                    
+                            ?><div class="container">
+                                    <div class="box">
+                                        <h4><?php echo $row["COL 2"] ?></h4>
+                                <p><?php echo $row["COL 4"] ?> </p>
+                                <span><?php echo $row["COL 3"] ?></span>
+                            </div>
+                            </div>
+                            
+                            <?php } 
+                        ?></div>
+                    
+                    
+                    
+                        <?php
+                    } else {
+                        echo "0 results";
+                        }
+
+
+
+$conn->close();
+
+?>
+                </div>         
+                
 		</section>
     <!-- Menu section ends-->
 
