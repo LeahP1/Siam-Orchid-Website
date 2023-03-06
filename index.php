@@ -32,7 +32,7 @@
 
         <div class="icons">
             <i class="fa-solid fa-bars" id="menu-bars"></i>
-            <a href="#" class="fa-solid fa-cart-shopping"></a>
+            <a href="http://localhost/Siam-Orchid-Website-main/cart.php" class="fa-solid fa-cart-shopping"><span>1</span></a>
         </div>
     </header>
     <!-- header section ends-->
@@ -149,23 +149,53 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
+
+if(isset($_POST['addToCart'])){
+
+       
+
+            
+    $itemName = $_POST['itemNameInput'];
+    $itemDescription = $_POST['itemDescriptionInput'];
+    $itemPrice = $_POST['itemPriceInput'];
+    $itemQuanity = $_POST['quantity'];
+    
+    $transferItem = mysqli_query($conn, "INSERT INTO `Cart`(name,description,price,quantity)VALUES('$itemName','$itemDescription','$itemPrice','$itemQuanity')");
+
+
+}    
+
 ?><div class = "tabContent active"><?php
 $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Thai Lunch Specials'";
 $result = $conn->query($sql);
+
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
 
         ?><div class="container">
-                <div class="box">
+            <div class = "box">
+                <form action = "#menu" method = "POST">
                     <h4><?php echo $row["COL 2"] ?></h4>
+                    <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
             <p><?php echo $row["COL 4"] ?> </p>
+            <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
             <span><?php echo $row["COL 3"] ?></span>
-        </div>
+            <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+           <br> <input type = "number" name = "quantity" value = "1">
+           <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+    </form>
+    </div>
+    
         </div>
         
-        <?php } 
+        <?php 
+   
+    
+    
+    } 
     ?></div>
 
 
@@ -183,14 +213,25 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 
         ?><div class="container">
-                <div class="box">
+            <div class = "box">
+                <form action = "#menu" method = "POST">
                     <h4><?php echo $row["COL 2"] ?></h4>
+                    <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
             <p><?php echo $row["COL 4"] ?> </p>
+            <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
             <span><?php echo $row["COL 3"] ?></span>
-        </div>
+            <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+           <br> <input type = "number" name = "quantity" value = "1">
+           <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+    </form>
+    </div>
         </div>
         
-        <?php } 
+        <?php 
+   
+    
+    
+    } 
     ?></div>
 
 
@@ -208,14 +249,25 @@ if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
     
             ?><div class="container">
-                    <div class="box">
+                <div class = "box">
+                    <form action = "#menu" method = "POST">
                         <h4><?php echo $row["COL 2"] ?></h4>
+                        <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                 <p><?php echo $row["COL 4"] ?> </p>
+                <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                 <span><?php echo $row["COL 3"] ?></span>
-            </div>
+                <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+               <br> <input type = "number" name = "quantity" value = "1">
+               <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+        </form>
+        </div>
             </div>
             
-            <?php } 
+            <?php 
+       
+        
+        
+        } 
         ?></div>
     
     
@@ -234,14 +286,25 @@ if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
     
             ?><div class="container">
-                    <div class="box">
+                <div class = "box">
+                    <form action = "#menu" method = "POST">
                         <h4><?php echo $row["COL 2"] ?></h4>
+                        <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                 <p><?php echo $row["COL 4"] ?> </p>
+                <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                 <span><?php echo $row["COL 3"] ?></span>
-            </div>
+                <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+               <br> <input type = "number" name = "quantity" value = "1">
+               <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+        </form>
+        </div>
             </div>
             
-            <?php } 
+            <?php 
+       
+        
+        
+        } 
         ?></div>
     
     
@@ -259,14 +322,25 @@ if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
     
             ?><div class="container">
-                    <div class="box">
+                <div class = "box">
+                    <form action = "#menu" method = "POST">
                         <h4><?php echo $row["COL 2"] ?></h4>
+                        <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                 <p><?php echo $row["COL 4"] ?> </p>
+                <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                 <span><?php echo $row["COL 3"] ?></span>
-            </div>
+                <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+               <br> <input type = "number" name = "quantity" value = "1">
+               <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+        </form>
+        </div>
             </div>
             
-            <?php } 
+            <?php 
+       
+        
+        
+        } 
         ?></div>
     
     
@@ -284,14 +358,25 @@ if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
         
                 ?><div class="container">
-                        <div class="box">
+                    <div class = "box">
+                        <form action = "#menu" method = "POST">
                             <h4><?php echo $row["COL 2"] ?></h4>
+                            <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                     <p><?php echo $row["COL 4"] ?> </p>
+                    <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                     <span><?php echo $row["COL 3"] ?></span>
-                </div>
+                    <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                   <br> <input type = "number" name = "quantity" value = "1">
+                   <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+            </form>
+            </div>
                 </div>
                 
-                <?php } 
+                <?php 
+           
+            
+            
+            } 
             ?></div>
         
         
@@ -309,14 +394,25 @@ if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
             
                     ?><div class="container">
-                            <div class="box">
+                        <div class = "box">
+                            <form action = "#menu" method = "POST">
                                 <h4><?php echo $row["COL 2"] ?></h4>
+                                <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                         <p><?php echo $row["COL 4"] ?> </p>
+                        <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                         <span><?php echo $row["COL 3"] ?></span>
-                    </div>
+                        <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                       <br> <input type = "number" name = "quantity" value = "1">
+                       <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+                </form>
+                </div>
                     </div>
                     
-                    <?php } 
+                    <?php 
+               
+                
+                
+                } 
                 ?></div>
             
             
@@ -334,14 +430,25 @@ if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                 
                         ?><div class="container">
-                                <div class="box">
+                            <div class = "box">
+                                <form action = "#menu" method = "POST">
                                     <h4><?php echo $row["COL 2"] ?></h4>
+                                    <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                             <p><?php echo $row["COL 4"] ?> </p>
+                            <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                             <span><?php echo $row["COL 3"] ?></span>
-                        </div>
+                            <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                           <br> <input type = "number" name = "quantity" value = "1">
+                           <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+                    </form>
+                    </div>
                         </div>
                         
-                        <?php } 
+                        <?php 
+                   
+                    
+                    
+                    } 
                     ?></div>
                 
                 
@@ -359,14 +466,25 @@ if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                     
                             ?><div class="container">
-                                    <div class="box">
+                                <div class = "box">
+                                    <form action = "#menu" method = "POST">
                                         <h4><?php echo $row["COL 2"] ?></h4>
+                                        <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                                 <p><?php echo $row["COL 4"] ?> </p>
+                                <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                                 <span><?php echo $row["COL 3"] ?></span>
-                            </div>
+                                <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                               <br> <input type = "number" name = "quantity" value = "1">
+                               <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+                        </form>
+                        </div>
                             </div>
                             
-                            <?php } 
+                            <?php 
+                       
+                        
+                        
+                        } 
                         ?></div>
                     
                     
