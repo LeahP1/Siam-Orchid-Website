@@ -8,20 +8,34 @@
 
         <!--link to make the slider work-->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
+        
         <!--link to custome fonts from font awesome-->
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <script src="https://kit.fontawesome.com/a835e69283.js" crossorigin="anonymous"></script>
        
         <!--Custom Css file-->
         <link rel="stylesheet" href="css/style.css">
-
+        
     </head>
     <body>
+        <?php
+        // Create connection
+        $conn = new mysqli('localhost', 'root', '', 'menutest');
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        
+        $sql = "SELECT COUNT(*) AS totalrows FROM cart";
+            $countrows = $conn->query($sql);
+            $count = mysqli_fetch_assoc($countrows);
+            $number_rows = $count['totalrows']
+            
+            ?>
 
     <!-- header section starts-->
     <header>
-        <div class="logo"><a href=""><img class="siam-orchid-logo" src="images/siam-orchid-logo.png" alt="Siam Orchind Logo"></a></div>
+        <div class="logo"><a href="http://localhost/Siam-Orchid-Website-main"><img class="siam-orchid-logo" src="images/siam-orchid-logo.png" alt="Siam Orchind Logo"></a></div>
         <nav class="navbar">
             <a  class="active" href="#home">HOME</a>
             <a href="#about">ABOUT</a>
@@ -32,7 +46,16 @@
 
         <div class="icons">
             <i class="fa-solid fa-bars" id="menu-bars"></i>
-            <a href="http://localhost/Siam-Orchid-Website-main/cart.php" class="fa-solid fa-cart-shopping"><span>1</span></a>
+            <?php 
+            if($number_rows >= 1)
+            {
+                ?><a href="http://localhost/Siam-Orchid-Website-main/cart.php" class="fa-solid fa-cart-shopping"><span><?php echo $number_rows?></span></a><?php
+
+            }
+            else{
+                ?><a href="http://localhost/Siam-Orchid-Website-main/cart.php" class="fa-solid fa-cart-shopping" style = "pointer-events:none"><span></span></a><?php
+            }
+            ?>
         </div>
     </header>
     <!-- header section ends-->
@@ -142,14 +165,6 @@
 
 
 
-// Create connection
-$conn = new mysqli('localhost', 'root', '', 'menutest');
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
 
 if(isset($_POST['addToCart'])){
 
@@ -167,8 +182,11 @@ if(isset($_POST['addToCart'])){
 }    
 
 ?><div class = "tabContent active"><?php
-$sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Thai Lunch Specials'";
+$sql = "SELECT * FROM menu_3 WHERE `COL 5` = 'Thai Lunch Specials'";
 $result = $conn->query($sql);
+
+$count = "SELECT COUNT(*) FROM cart";
+    $countrows = $conn->query($count);
 
 
 if ($result->num_rows > 0) {
@@ -182,7 +200,7 @@ if ($result->num_rows > 0) {
                     <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
             <p><?php echo $row["COL 4"] ?> </p>
             <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
-            <span><?php echo $row["COL 3"] ?></span>
+            <span>$<?php echo $row["COL 3"] ?></span>
             <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
            <br> <input type = "number" name = "quantity" value = "1">
            <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
@@ -205,7 +223,7 @@ if ($result->num_rows > 0) {
     echo "0 results";
     }
     ?><div class = "tabContent"><?php
-$sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Japanese Lunch Specials'";
+$sql = "SELECT * FROM menu_3 WHERE `COL 5` = 'Japanese Lunch Specials'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -219,7 +237,7 @@ if ($result->num_rows > 0) {
                     <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
             <p><?php echo $row["COL 4"] ?> </p>
             <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
-            <span><?php echo $row["COL 3"] ?></span>
+            <span>$<?php echo $row["COL 3"] ?></span>
             <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
            <br> <input type = "number" name = "quantity" value = "1">
            <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
@@ -241,7 +259,7 @@ if ($result->num_rows > 0) {
     echo "0 results";
     }
     ?><div class = "tabContent"><?php
-    $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Appetizers'";
+    $sql = "SELECT * FROM menu_3 WHERE `COL 5` = 'Appetizers'";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
@@ -255,7 +273,7 @@ if ($result->num_rows > 0) {
                         <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                 <p><?php echo $row["COL 4"] ?> </p>
                 <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
-                <span><?php echo $row["COL 3"] ?></span>
+                <span>$<?php echo $row["COL 3"] ?></span>
                 <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
                <br> <input type = "number" name = "quantity" value = "1">
                <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
@@ -278,7 +296,7 @@ if ($result->num_rows > 0) {
         }
        
          ?><div class = "tabContent"><?php
-    $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Soups' OR `COL 5` = 'Salads' ";
+    $sql = "SELECT * FROM menu_3 WHERE `COL 5` = 'Soups' OR `COL 5` = 'Salads' ";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
@@ -292,7 +310,7 @@ if ($result->num_rows > 0) {
                         <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                 <p><?php echo $row["COL 4"] ?> </p>
                 <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
-                <span><?php echo $row["COL 3"] ?></span>
+                <span>$<?php echo $row["COL 3"] ?></span>
                 <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
                <br> <input type = "number" name = "quantity" value = "1">
                <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
@@ -314,7 +332,7 @@ if ($result->num_rows > 0) {
         echo "0 results";
         }
         ?><div class = "tabContent"><?php
-    $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` LIKE '%Entrees'";
+    $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE '%Entrees'";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
@@ -328,7 +346,7 @@ if ($result->num_rows > 0) {
                         <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                 <p><?php echo $row["COL 4"] ?> </p>
                 <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
-                <span><?php echo $row["COL 3"] ?></span>
+                <span>$<?php echo $row["COL 3"] ?></span>
                 <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
                <br> <input type = "number" name = "quantity" value = "1">
                <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
@@ -350,7 +368,7 @@ if ($result->num_rows > 0) {
         echo "0 results";
         }
         ?><div class = "tabContent"><?php
-        $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` LIKE '%Rolls'";
+        $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE '%Rolls'";
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
@@ -364,7 +382,7 @@ if ($result->num_rows > 0) {
                             <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                     <p><?php echo $row["COL 4"] ?> </p>
                     <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
-                    <span><?php echo $row["COL 3"] ?></span>
+                    <span>$<?php echo $row["COL 3"] ?></span>
                     <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
                    <br> <input type = "number" name = "quantity" value = "1">
                    <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
@@ -386,7 +404,7 @@ if ($result->num_rows > 0) {
             echo "0 results";
             }
             ?><div class = "tabContent"><?php
-            $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Beverages'";
+            $sql = "SELECT * FROM menu_3 WHERE `COL 5` = 'Beverages'";
             $result = $conn->query($sql);
             
             if ($result->num_rows > 0) {
@@ -400,7 +418,7 @@ if ($result->num_rows > 0) {
                                 <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                         <p><?php echo $row["COL 4"] ?> </p>
                         <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
-                        <span><?php echo $row["COL 3"] ?></span>
+                        <span>$<?php echo $row["COL 3"] ?></span>
                         <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
                        <br> <input type = "number" name = "quantity" value = "1">
                        <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
@@ -422,7 +440,7 @@ if ($result->num_rows > 0) {
                 echo "0 results";
                 }
                 ?><div class = "tabContent"><?php
-                $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` = 'Desserts'";
+                $sql = "SELECT * FROM menu_3 WHERE `COL 5` = 'Desserts'";
                 $result = $conn->query($sql);
                 
                 if ($result->num_rows > 0) {
@@ -436,7 +454,7 @@ if ($result->num_rows > 0) {
                                     <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                             <p><?php echo $row["COL 4"] ?> </p>
                             <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
-                            <span><?php echo $row["COL 3"] ?></span>
+                            <span>$<?php echo $row["COL 3"] ?></span>
                             <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
                            <br> <input type = "number" name = "quantity" value = "1">
                            <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
@@ -458,7 +476,7 @@ if ($result->num_rows > 0) {
                     echo "0 results";
                     }
                     ?><div class = "tabContent"><?php
-                    $sql = "SELECT * FROM menu_spreadsheet_no_commas_____sheet1 WHERE `COL 5` LIKE '%Menu'";
+                    $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE '%Menu'";
                     $result = $conn->query($sql);
                     
                     if ($result->num_rows > 0) {
@@ -472,7 +490,7 @@ if ($result->num_rows > 0) {
                                         <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                                 <p><?php echo $row["COL 4"] ?> </p>
                                 <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
-                                <span><?php echo $row["COL 3"] ?></span>
+                                <span>$<?php echo $row["COL 3"] ?></span>
                                 <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
                                <br> <input type = "number" name = "quantity" value = "1">
                                <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
