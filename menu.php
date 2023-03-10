@@ -37,25 +37,16 @@
     <header>
         <div class="logo"><a href="http://localhost/Siam-Orchid-Website-main"><img class="siam-orchid-logo" src="images/siam-orchid-logo.png" alt="Siam Orchind Logo"></a></div>
         <nav class="navbar">
-            <a  class="active" href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="index.php">MENU</a>
-            <a href="#information">INFO</a>
+            <a  href="http://localhost/Siam-Orchid-Website-main/#home">HOME</a>
+            <a href="http://localhost/Siam-Orchid-Website-main/#about">ABOUT</a>
+            <a class = "active" href="menu.php">MENU</a>
+            <a href="http://localhost/Siam-Orchid-Website-main/#information">INFO</a>
            
         </nav>
 
         <div class="icons">
             <i class="fa-solid fa-bars" id="menu-bars"></i>
-            <?php 
-            if($number_rows >= 1)
-            {
-                ?><a href="http://localhost/Siam-Orchid-Website-main/cart.php" class="fa-solid fa-cart-shopping"><span><?php echo $number_rows?></span></a><?php
-
-            }
-            else{
-                ?><a href="http://localhost/Siam-Orchid-Website-main/cart.php" class="fa-solid fa-cart-shopping" style = "pointer-events:none"><span></span></a><?php
-            }
-            ?>
+            <a href="http://localhost/Siam-Orchid-Website-main/cart.php" class="fa-solid fa-cart-shopping"><span><?php echo $number_rows?></span></a>
         </div>
     </header>
     <!-- header section ends-->
@@ -84,10 +75,11 @@
                     <button class = "tab">Appetizers</button>
                     <button class = "tab">Soups and Salads</button>
                     <button class = "tab">Entrees</button>
-                    <button class = "tab">Sushi and Rolls</button>
+                    <button class = "tab">Sushi, Rolls, and Baskets</button>
                     <button class = "tab">Drinks</button>
                     <button class = "tab">Desserts</button>
                     <button class = "tab">Kids Menu</button>
+                    <button class = "tab">Extras</button>
                 </div>
                 <div class="menu-info">
                 <?php
@@ -261,7 +253,7 @@ if ($result->num_rows > 0) {
         echo "0 results";
         }
         ?><div class = "tabContent"><?php
-    $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE '%Entrees'";
+    $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE '%Entrees' OR `COL 5` LIKE 'Chef%' OR `COL 5` LIKE '%Choices'";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
@@ -297,7 +289,7 @@ if ($result->num_rows > 0) {
         echo "0 results";
         }
         ?><div class = "tabContent"><?php
-        $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE '%Rolls'";
+        $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE '%Rolls' OR `COL 5` LIKE '%Combinations' OR `COL 5` LIKE '%Baskets'";
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
@@ -440,7 +432,42 @@ if ($result->num_rows > 0) {
                     } else {
                         echo "0 results";
                         }
-
+                        ?><div class = "tabContent"><?php
+                        $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE 'Extra%'";
+                        $result = $conn->query($sql);
+                        
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while($row = $result->fetch_assoc()) {
+                        
+                                ?><div class="container">
+                                    <div class = "box">
+                                        <form action = "#menu" method = "POST">
+                                            <h4><?php echo $row["COL 2"] ?></h4>
+                                            <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
+                                    <p><?php echo $row["COL 4"] ?> </p>
+                                    <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
+                                    <span>$<?php echo $row["COL 3"] ?></span>
+                                    <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                                   <br> <input type = "number" name = "quantity" value = "1">
+                                   <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+                            </form>
+                            </div>
+                                </div>
+                                
+                                <?php 
+                           
+                            
+                            
+                            } 
+                            ?></div>
+                        
+                        
+                        
+                            <?php
+                        } else {
+                            echo "0 results";
+                            }
 
 
 $conn->close();

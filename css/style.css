@@ -35,7 +35,9 @@ html{
     color: var(--black);
     padding: 5rem 0;
     text-align: center;
+    margin-top: 10px;
 }
+
 
 p{
     color:var(--black);
@@ -287,8 +289,19 @@ footer a{
     
     background: var(--white);
     border: .1rem solid rgba(0,0,0,.3);
+    transition: 0.3s;
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
+
+}
+.menu .container .box:hover{
+    
+   
+    border: .1rem solid rgba(0,0,0,.3);
+    transition: 0.3s;
+    border-radius: .5rem;
+    box-shadow:0 1.0rem 2.5rem rgba(0,0,0,.3);
+
 }
 .menu .tabContent {
     display: none;
@@ -307,6 +320,7 @@ input[type=submit]{
     font-weight: bold;
     color: rgb(255, 255, 255); 
     border: 2px solid #690000;
+    cursor: pointer;
 }
 input[type=number]{
     width: 100%;
@@ -421,6 +435,41 @@ font-size: 25px;
     color: #f5f5f5;
    
 }
+.message .orderbtn {
+    border: 1px solid #a40000;
+    border-radius: 4px;
+    margin: 20px;
+    padding: 5px;
+    font-size: 25px;
+    background-color:#690000;
+    color: #f5f5f5;
+   
+}
+.successbody{
+    background-color: #ffeedd;
+}
+.card{
+    background-color: #f5f5f5;
+    box-shadow:0 .5rem 1.5rem rgba(0,0,0,.3);
+    width: 30%;
+    justify-content: center;
+   margin: auto;
+   margin-top: 300px;
+   border-radius: 4px;
+}
+ .card .message{
+    padding: 6px 18px;
+    text-align: center;
+  }
+  .message h4{
+    
+    font-size: 20px;
+  }
+.message .orderbtn a{
+    font-weight: bold;
+    color: #f5f5f5;
+   
+}
 .deletebtn{
     border: 1px solid #690000;
     border-radius: 4px;
@@ -467,6 +516,14 @@ font-size: 25px;
         height: auto;
     }
     .heading{
+
+        font-size: 30px;
+        color: var(--black);
+        padding: 5rem 0;
+        text-align: center;
+    }
+    .cartHeading{
+        margin-top: 40%;
         font-size: 30px;
         color: var(--black);
         padding: 5rem 0;
