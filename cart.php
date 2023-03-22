@@ -96,7 +96,7 @@ $totalnumber += $price * $quantity;
         </div>
       </div>
       <form action="http://localhost/Siam-Orchid-Website-main/checkout.php" method="POST">
-        <button type="submit" class ="orderbtn">Checkout</button>
+        <button type="submit" class ="orderbtn"><div class = "checkstyle">Checkout</div></button>
       </form>
     <h3>Delivery</h3>
     <button class = "orderbtn"><a href = "https://www.ubereats.com/">UberEats</a></button>

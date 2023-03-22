@@ -6,11 +6,16 @@
 </head>
 <body class = "successbody">
   <div class = "card">
-
     <div class= "message">
+      <p>Order Number:</p>
+      <p id = "rando"></p>
       <h4><b>We appreciate the order! If you have any questions, call us at (321) 783-4545</b></h4>
       <button class = "orderbtn" styling = ><a href = "http://localhost/Siam-Orchid-Website-main/#menu">Return Home</a></button>
     </div>
   </div>
+  <script>
+    //Random Number Order
+  document.getElementById('rando').innerHTML 
+  = Math.floor(Math.random() * 9999999) + 1000000;</script>
 </body>
 </html>

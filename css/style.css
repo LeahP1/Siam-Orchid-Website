@@ -322,6 +322,7 @@ input[type=submit]{
     border: 2px solid #690000;
     cursor: pointer;
 }
+
 input[type=number]{
     width: 100%;
     padding: 12px 20px;
@@ -420,6 +421,11 @@ table, th{
 .orderMethod h3{
 font-size: 25px;
 }
+.checkstyle{
+    font-weight: bold;
+    color: #f5f5f5;
+    cursor:pointer;
+}
 .orderMethod .orderbtn{
     border: 1px solid #690000;
     border-radius: 4px;
@@ -428,6 +434,8 @@ font-size: 25px;
     font-size: 25px;
     background-color:#690000;
     color: #f5f5f5;
+    font-weight: bold;
+   
    
 }
 .orderMethod .orderbtn a{

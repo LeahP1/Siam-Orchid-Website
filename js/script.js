@@ -30,7 +30,10 @@ window.onscroll = () =>{
     });
   
 }
+//Uses querrySelector to grab tab class to determine where the button is active or not.
+// If clicked, the the stlying will be added to be tab and tabContent class to determine which information is present in the list. 
 const tabs = document.querySelectorAll('.tab');
+
 const theTabContent = document.querySelectorAll('.tabContent');
 
 tabs.forEach((tab, index) =>
@@ -42,6 +45,7 @@ theTabContent.forEach(info=>{info.classList.remove('active')})
 theTabContent[index].classList.add('active');
  }))
 
+ //Slider
 var swiper = new Swiper(".home-slider", {
     spaceBetween: 30,
     centeredSlides: true,
@@ -76,3 +80,4 @@ list.forEach((el)=>{
        })
     })
 })
+

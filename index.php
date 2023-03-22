@@ -97,7 +97,7 @@
                             <h3>Thai Cuisine</h3>
                             <p>Thai food is famous throughout the world, where harmony and balance is the guiding principle. Thai cuisine is a blend of eastern and western influences with five disctinct flavors harmoniously balanced to create a delicious, aromatic and flavorful taste uniquely Thai.<br></p>
                             <p><br>A typical Thai meal is usually a communal affair where diners share with each other and the more diners means the more dishes to taste. Siam Orchid offers the freshest ingredients of seafood, meats, vegetables, spices and herbs in a friendly atmosphere to transport your palatte through Thailand.</p>
-                            <a href="#" class="btn">order now</a>
+                            <a href="http://localhost/Siam-Orchid-Website-main/menu.php" class="btn">order now</a>
                         </div>
                         <div class="image">
                             <img src="images/thai-dish.png" alt="A Picture Of A Thai Food Dish">
@@ -109,7 +109,7 @@
                             <h3>Japanese Cuisine</h3>
                             <p>Japanese cuisine is influenced by the seasons and the geography that surrounds it and freshness, presentation and balance of flavors are paramount. Japanese food is also recognized as one of the worlds healtiest cuisines.<br></p>
                             <p><br>Japanese cuisine should be skillfully and artfully presented and enjoyed by the eyes first and then the palatte. Siam Orchid skillfully offers traditional and fusion Japanese and Thai dishes with the freshest ingredients of seafood, meats, vegetables, spices and herbs in a friendly atmosphere.</p>
-                            <a href="#" class="btn">order now</a>
+                            <a href="http://localhost/Siam-Orchid-Website-main/menu.php" class="btn">order now</a>
                         </div>
                         <div class="image">
                             <img src="images/japanese-dish.png" alt="A Picture Of a Fish Type Japanese Style Dish">

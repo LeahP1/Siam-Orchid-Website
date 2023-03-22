@@ -111,7 +111,7 @@ $count = "SELECT COUNT(*) FROM cart";
 
 
 if ($result->num_rows > 0) {
-    // output data of each row
+    // output data of each tab
     while($row = $result->fetch_assoc()) {
 
         ?><div class="container">
@@ -148,7 +148,7 @@ $sql = "SELECT * FROM menu_3 WHERE `COL 5` = 'Japanese Lunch Specials'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
+    // output data of each tab
     while($row = $result->fetch_assoc()) {
 
         ?><div class="container">
@@ -184,7 +184,7 @@ if ($result->num_rows > 0) {
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
-        // output data of each row
+        // output data of each tab
         while($row = $result->fetch_assoc()) {
     
             ?><div class="container">
@@ -221,7 +221,7 @@ if ($result->num_rows > 0) {
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
-        // output data of each row
+        // output data of each tab
         while($row = $result->fetch_assoc()) {
     
             ?><div class="container">
@@ -253,11 +253,13 @@ if ($result->num_rows > 0) {
         echo "0 results";
         }
         ?><div class = "tabContent"><?php
-    $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE '%Entrees' OR `COL 5` LIKE 'Chef%' OR `COL 5` LIKE '%Choices'";
+    $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE '%Entrees' OR `COL 5` LIKE
+     'Chef%' OR `COL 5` LIKE '%Choices' OR `COL 5` LIKE '%Temaki' OR `COL 5` LIKE '%Dinners'";
+
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
-        // output data of each row
+        // output data of each tab
         while($row = $result->fetch_assoc()) {
     
             ?><div class="container">
@@ -290,6 +292,7 @@ if ($result->num_rows > 0) {
         }
         ?><div class = "tabContent"><?php
         $sql = "SELECT * FROM menu_3 WHERE `COL 5` LIKE '%Rolls' OR `COL 5` LIKE '%Combinations' OR `COL 5` LIKE '%Baskets'";
+
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
@@ -326,10 +329,11 @@ if ($result->num_rows > 0) {
             }
             ?><div class = "tabContent"><?php
             $sql = "SELECT * FROM menu_3 WHERE `COL 5` = 'Beverages'";
+            
             $result = $conn->query($sql);
             
             if ($result->num_rows > 0) {
-                // output data of each row
+                // output data of each tab
                 while($row = $result->fetch_assoc()) {
             
                     ?><div class="container">
@@ -365,7 +369,7 @@ if ($result->num_rows > 0) {
                 $result = $conn->query($sql);
                 
                 if ($result->num_rows > 0) {
-                    // output data of each row
+                    // output data of each tab
                     while($row = $result->fetch_assoc()) {
                 
                         ?><div class="container">
@@ -401,7 +405,7 @@ if ($result->num_rows > 0) {
                     $result = $conn->query($sql);
                     
                     if ($result->num_rows > 0) {
-                        // output data of each row
+                        // output data of each tab
                         while($row = $result->fetch_assoc()) {
                     
                             ?><div class="container">
@@ -437,7 +441,7 @@ if ($result->num_rows > 0) {
                         $result = $conn->query($sql);
                         
                         if ($result->num_rows > 0) {
-                            // output data of each row
+                            // output data of each tab
                             while($row = $result->fetch_assoc()) {
                         
                                 ?><div class="container">
