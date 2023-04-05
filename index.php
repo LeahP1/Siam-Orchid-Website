@@ -25,11 +25,11 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        
+        $number_rows = 0;
         $sql = "SELECT COUNT(*) AS totalrows FROM cart";
             $countrows = $conn->query($sql);
             $count = mysqli_fetch_assoc($countrows);
-            $number_rows = $count['totalrows']
+            $number_rows += $count['totalrows']
             
             ?>
 

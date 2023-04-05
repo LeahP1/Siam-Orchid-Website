@@ -51,18 +51,11 @@
     </header>
     <!-- header section ends-->
 
-    <!-- home section starts-->
-    <section class="home" id="home">
-         <div class="content">
-             <div class="image-home">
-                 <img src="images/thai_food_homepage.jpg" alt="Our Thai Cusine">
-             </div>
-         </div>
-    </section>
     <!-- home section ends-->
 
     
     <!-- Menu section starts-->
+    <br><br><br><br><br><br><br><br>
     <section class="menu" id="menu">
         <div class="title">
             <h1 class="heading">MENU</h1>
