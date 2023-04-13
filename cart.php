@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
- 
-    <link rel="stylesheet" href="css/style.css">
-
+        
+        <link rel="stylesheet" href="css/style.css">
+        <title>Cart</title>
+        
     </head>
     <body class = "cartbody">
         <header>
@@ -25,7 +26,7 @@
     $sql = "SELECT * FROM Cart";
     $result = $conn->query($sql);
     
-    
+  
     
     
     if(isset($_GET['delete'])){
@@ -34,11 +35,11 @@
         header('location:cart.php');
     }
     
-    if ($result->num_rows > 0) {
-        ?>
+    ?>
         <br> <br><br><br><br><br>
         <h1 class = "heading">Cart</h1>
-            <div class = "cartTable">
+        <?php if ($result->num_rows > 0) {
+          ?>  <div class = "cartTable">
 
                 <table>
                     <tr>
@@ -77,19 +78,15 @@ $totalnumber += $price * $quantity;
 
 </table>
 </div>
-<?php   
-
-}
 
 ?>
 <div class = "orderMethod">
     <button class = "orderbtn"><a href = "http://localhost/Siam-Orchid-Website-main/menu.php">Go Back</a></button>
-    <title>Buy cool new product</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://js.stripe.com/v3/"></script>
-  </head>
-  <body>
-    <section>
+ 
+ 
+   
       <div class="product">
              <div class="description">
         
@@ -102,6 +99,24 @@ $totalnumber += $price * $quantity;
     <button class = "orderbtn"><a href = "https://www.ubereats.com/">UberEats</a></button>
     <button class = "orderbtn"><a href = "https://www.doordash.com/">Door Dash</a></button>
 </div>
+<?php   
+
+}
+else{
+    
+    ?>
+    <div class = "orderMethod">
+
+        <p>Your Shopping Cart is Empty!</p>
+        <p>Click The Button Below To Start Your Order</p>    
+        <button class = "orderbtn"><a href = "http://localhost/Siam-Orchid-Website-main/menu.php">Return To Menu</a></button>
+
+
+    </div>
+    <?php
+    
+}
+?>
 
 <footer class="footer-distributed">
             <div class="container">

@@ -25,11 +25,6 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        
-        $sql = "SELECT COUNT(*) AS totalrows FROM cart";
-            $countrows = $conn->query($sql);
-            $count = mysqli_fetch_assoc($countrows);
-            $number_rows = $count['totalrows']
             
             ?>
 
@@ -46,7 +41,7 @@
 
         <div class="icons">
             <i class="fa-solid fa-bars" id="menu-bars"></i>
-            <a href="http://localhost/Siam-Orchid-Website-main/cart.php" class="fa-solid fa-cart-shopping"><span><?php echo $number_rows?></span></a>
+            <a href="http://localhost/Siam-Orchid-Website-main/cart.php" class="fa-solid fa-cart-shopping"><span></span></a>
         </div>
     </header>
     <!-- header section ends-->
