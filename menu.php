@@ -119,8 +119,8 @@ $count = "SELECT COUNT(*) FROM cart";
                     <span>$<?php echo $row["COL 3"] ?></span>
                     <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
                 </div>
-                     <input type = "number" name = "quantity" value = "1">
-                     <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
+                    <br> <input type = "number" name = "quantity" value = "1">
+                     <br><input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
                
     </form>
     </div>
@@ -151,13 +151,15 @@ if ($result->num_rows > 0) {
 
          ?>   <div class = "box">
                 <form action = "#menu" method = "POST">
+                <div class = "menuItem">
                     <h4><?php echo $row["COL 2"] ?></h4>
                     <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
             <p><?php echo $row["COL 4"] ?> </p>
             <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
             <span>$<?php echo $row["COL 3"] ?></span>
             <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
-           <br> <input type = "number" name = "quantity" value = "1">
+                </div>
+           <br><input type = "number" name = "quantity" value = "1">
            <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
     </form>
     </div>
@@ -187,12 +189,14 @@ if ($result->num_rows > 0) {
     
                ?> <div class = "box">
                     <form action = "#menu" method = "POST">
+                    <div class = "menuItem">
                         <h4><?php echo $row["COL 2"] ?></h4>
                         <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                 <p><?php echo $row["COL 4"] ?> </p>
                 <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                 <span>$<?php echo $row["COL 3"] ?></span>
                 <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                    </div>
                <br> <input type = "number" name = "quantity" value = "1">
                <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
         </form>
@@ -224,12 +228,14 @@ if ($result->num_rows > 0) {
     
                ?> <div class = "box">
                     <form action = "#menu" method = "POST">
+                        <div class = "menuItem">
                         <h4><?php echo $row["COL 2"] ?></h4>
                         <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                 <p><?php echo $row["COL 4"] ?> </p>
                 <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                 <span>$<?php echo $row["COL 3"] ?></span>
                 <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                        </div>
                <br> <input type = "number" name = "quantity" value = "1">
                <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
         </form>
@@ -262,12 +268,14 @@ if ($result->num_rows > 0) {
     
               ?>  <div class = "box">
                     <form action = "#menu" method = "POST">
+                        <div class = "menuItem">
                         <h4><?php echo $row["COL 2"] ?></h4>
                         <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                 <p><?php echo $row["COL 4"] ?> </p>
                 <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                 <span>$<?php echo $row["COL 3"] ?></span>
                 <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                        </div>
                <br> <input type = "number" name = "quantity" value = "1">
                <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
         </form>
@@ -299,12 +307,14 @@ if ($result->num_rows > 0) {
         
                  ?>   <div class = "box">
                         <form action = "#menu" method = "POST">
+                            <div class = "menuItem">
                             <h4><?php echo $row["COL 2"] ?></h4>
                             <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                     <p><?php echo $row["COL 4"] ?> </p>
                     <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                     <span>$<?php echo $row["COL 3"] ?></span>
                     <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                            </div>
                    <br> <input type = "number" name = "quantity" value = "1">
                    <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
             </form>
@@ -336,12 +346,14 @@ if ($result->num_rows > 0) {
             
                       ?>  <div class = "box">
                             <form action = "#menu" method = "POST">
+                                <div class = "menuItem">
                                 <h4><?php echo $row["COL 2"] ?></h4>
                                 <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                         <p><?php echo $row["COL 4"] ?> </p>
                         <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                         <span>$<?php echo $row["COL 3"] ?></span>
                         <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                                </div>
                        <br> <input type = "number" name = "quantity" value = "1">
                        <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
                 </form>
@@ -372,12 +384,14 @@ if ($result->num_rows > 0) {
                 
                ?>             <div class = "box">
                                 <form action = "#menu" method = "POST">
+                                    <div class = "menuItem">
                                     <h4><?php echo $row["COL 2"] ?></h4>
                                     <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                             <p><?php echo $row["COL 4"] ?> </p>
                             <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                             <span>$<?php echo $row["COL 3"] ?></span>
                             <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                                    </div>
                            <br> <input type = "number" name = "quantity" value = "1">
                            <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
                     </form>
@@ -408,12 +422,14 @@ if ($result->num_rows > 0) {
                     
                                ?> <div class = "box">
                                     <form action = "#menu" method = "POST">
+                                        <div class = "menuItem">
                                         <h4><?php echo $row["COL 2"] ?></h4>
                                         <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                                 <p><?php echo $row["COL 4"] ?> </p>
                                 <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                                 <span>$<?php echo $row["COL 3"] ?></span>
                                 <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                                        </div>
                                <br> <input type = "number" name = "quantity" value = "1">
                                <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
                         </form>
@@ -444,12 +460,14 @@ if ($result->num_rows > 0) {
                         
                                    ?> <div class = "box">
                                         <form action = "#menu" method = "POST">
+                                            <div class = "menuItem">
                                             <h4><?php echo $row["COL 2"] ?></h4>
                                             <input type = "hidden" name = 'itemNameInput' value ="<?php echo $row["COL 2"];?>">
                                     <p><?php echo $row["COL 4"] ?> </p>
                                     <input type = "hidden" name = 'itemDescriptionInput' value ="<?php echo $row["COL 4"];?>">
                                     <span>$<?php echo $row["COL 3"] ?></span>
                                     <input type = "hidden" name = 'itemPriceInput' value ="<?php echo $row["COL 3"];?>">
+                                            </div>
                                    <br> <input type = "number" name = "quantity" value = "1">
                                    <br> <input type = "submit" class = "addCart" value = "ADD TO CART" name = "addToCart">
                             </form>

@@ -260,7 +260,7 @@ footer a{
 }
 /*menu css*/
 .container-menu{
-    width:auto;
+    width: auto;
     background-color: #ffeedd;
     box-shadow:0 .5rem 1.5rem rgba(0,0,0,.3);
     padding:10px;
@@ -273,7 +273,8 @@ footer a{
 
 .menu .container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, 35rem);
+   grid-auto-rows: 370px;
+    grid-template-columns: repeat(auto-fit, 30rem);
     gap: 1.5rem;
     justify-content: center;
     padding-bottom: 30px;
@@ -285,8 +286,8 @@ footer a{
     font-weight: bold;
     text-align: center;
 }
-.menu .container .box{
-    
+.menu .container .box {
+     
     background: var(--white);
     border: .1rem solid rgba(0,0,0,.3);
     transition: 0.3s;
@@ -294,6 +295,16 @@ footer a{
     box-shadow: var(--box-shadow);
 
 }
+.menu .container .box .menuItem{
+     
+   height: 270px
+
+
+}
+
+
+
+
 .menu .container .box:hover{
     
    
@@ -311,25 +322,22 @@ footer a{
     
 }
 input[type=submit]{
-    text-align: center;
-    border-radius: 4px;
+    position: static;
+    top: 100px;
     width: 100%;
-    display: inline-block;
-    padding: 10px 24px;
+     padding: 10px 14px;
     background-color: #690000; 
     font-weight: bold;
     color: rgb(255, 255, 255); 
     border: 2px solid #690000;
     cursor: pointer;
+
 }
 
 input[type=number]{
+
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px 10px;
     box-sizing: border-box;
 }
 
@@ -345,6 +353,10 @@ input[type=number]{
     width: 100%;
     border-radius: .5rem;
     object-fit: cover;
+}
+
+.emptyCart{
+    text-align: center;
 }
 
 
@@ -371,6 +383,7 @@ input[type=number]{
     justify-content: space-around;
     align-items: center;
    padding: 7px;
+   padding-bottom: 40px;
     font-size: 18px;
 }
 .tab-box .tab{
